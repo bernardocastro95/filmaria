@@ -1,0 +1,35 @@
+.movieInfo{
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+}
+
+.movieInfo img {
+    border-radius: 20px;
+}
+
+.movieInfo button{
+    margin-right: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border:0;
+    font-size: 20px;
+    outline: none;
+    padding:12px;
+    transition: all 0.5ms;
+}
+
+.movieInfo button:hover{
+    background-color: brown;
+    color: #fff;
+}
+.movieInfo a {
+    text-decoration: none;
+    color:#000;
+    transition: all 0.5ms;
+}
+.movieInfo a:hover{
+    color: #fff;
+    transition: all 0.5ms;
+}
