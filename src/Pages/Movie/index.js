@@ -2,6 +2,7 @@ import './movie-info.css'
 import { useHistory, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import api from '../../Services/api'
+import {toast} from 'react-toastify'
 export default function Movie(){
     const {id} = useParams()
     const history = useHistory();
@@ -34,13 +35,13 @@ export default function Movie(){
         const hasMovie = savedMovies.some((movie) => movie.id === filme.id)
 
         if(hasMovie){
-            alert('O filme selecionado já foi salvo');
+            toast.info('You already have this movie on your favorites')
             return
         }
         savedMovies.push(filme);
 
         localStorage.setItem('filmes', JSON.stringify(savedMovies))
-        alert('Filme salvo com sucesso')
+        toast.success('Movie added')
 
 
     }
@@ -59,7 +60,7 @@ export default function Movie(){
             <h3>{filme.sinopse}</h3>
 
             <div className="botoes">
-                <button onClick={saveMovie}>Salvar</button>
+                <button onClick={saveMovie}>Save</button>
                 <button>
                     <a target="blank" href={`https://youtube.com/results?search_query=${filme.nome} Trailer`}>
                         Trailer
